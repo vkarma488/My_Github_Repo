@@ -1,0 +1,33 @@
+Today I learnt how to launch my wsl on linux
+to do this I had to launch cmd
+in cmd I ran powershell command
+once i got there I ran wsl command 
+since i have already configured wsl i was logged into my wsl machine
+i ran command uptime
+then I ran command df -h
+after that i ran command ls-lh
+i saw 2 python files test.py and Newfile.py
+I thought of runing these files 
+to do so I used ./test.py
+but i got error no module cowsay
+to enable cowsay module I had to modify test.py with a shebang
+to do so i wrote #! /usr/bin/env python3 using vim Alt+I+Enter 
+to save :wq
+cat test.py
+but i needed to make it executable chmod+x test.py
+then I tried to run but it failed again as Python is not installed on my linux
+to install it i ran sudo apt install python3 
+then I installed sudo apt install python3-pip
+after installing pip I had to install cowsay 
+pip install cowsay failed to run 
+pip install cowsay --break--system--packages
+after that i ran two commands one at linux CLI 
+./test.py 
+cowsay "Hello"
+got response from both
+i tested other commands df -i cat /proc/cpuinfo
+to run python on linux you need to enter python3 (enter)
+executed print("hello")
+exit()
+exit to come out of linux
+clear to clear my commands in cmd 
