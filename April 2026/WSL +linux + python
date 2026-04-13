@@ -3,3 +3,24 @@
 <p>The emi calculator takes loan amount as input, Interest rate as input, term as input.</p>
 <p> Applies formula for compound Interest Calculation</p>
 <h>formula is A = p(1+r/n*100)^n</h>
+
+
+
+
+import numpy_financial as npf # pyright: ignore[reportMissingImports]
+def EmiCalculator(p, r, n) ->float:
+    
+    r = r/(12*100)
+    n = n*12
+    emi = p*r*(((1 + r)**n)/((1 + r)**n - 1))
+    #emi = a/(n)
+    return (round(emi,2))
+
+p = float(input("Enter Principal Amount:") or 100) 
+r = float(input("Enter Rate Of Interest:") or 5)
+n = int(input("Enter Number of years: ") or 5)
+print(f"EMI Using My calculator:{EmiCalculator(p, r, n)}")
+
+emi_new = npf.pmt(r/(12*100), n*12, -p)
+print(f"Emi using Numpy: {emi_new:.2f}")
+
