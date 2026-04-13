@@ -1,0 +1,5 @@
+<h>This is a test code for writing an EMI calculator on python</h>
+<b>EMI Calculator</b>
+<p>The emi calculator takes loan amount as input, Interest rate as input, term as input.</p>
+<p> Applies formula for compound Interest Calculation</p>
+<h>formula is A = p(1+r/n*100)^n</h>
