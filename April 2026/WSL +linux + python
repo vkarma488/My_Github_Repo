@@ -15,7 +15,7 @@ def EmiCalculator(p, r, n) ->float:
     emi = p*r*(((1 + r)**n)/((1 + r)**n - 1))
     #emi = a/(n)
     return (round(emi,2))
-
+'''
 p = float(input("Enter Principal Amount:") or 100) 
 r = float(input("Enter Rate Of Interest:") or 5)
 n = int(input("Enter Number of years: ") or 5)
@@ -23,4 +23,12 @@ print(f"EMI Using My calculator:{EmiCalculator(p, r, n)}")
 
 emi_new = npf.pmt(r/(12*100), n*12, -p)
 print(f"Emi using Numpy: {emi_new:.2f}")
+'''
 
+
+# Testing through File Upload
+import pandas as pd
+df = pd.read_csv(r"C:\Devtools\python\Test_data\emi_Test_Data.csv")
+df["EMI"] = df.apply(lambda x: EmiCalculator(x["Principal"], x["Rate"], x["Term"]), axis=1)
+print(df)
+df.to_csv(r"C:\Devtools\python\Test_data\emi_Test_Data.csv", index=False)
